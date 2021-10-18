@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Update User</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container my-5">
+        <h3> Update Movie</h3>
+        <div class="card">
+            <div class="card-body">
+                <div class="col-md-8">
+                    <form action="#" th:action="@{/movies/update/{id}(id=${movie.movieId})}" th:object="${movie}" method="post">
+                        <div class="row">
+                            <div class="form-group col-md-8">
+                                <label for="movieId" class="col-form-label">Movie Id</label> <input type="number" th:field="*{movieId}" class="form-control" id="movieId" placeholder="Movie Id"> <span th:if="${#fields.hasErrors('movieId')}" th:errors="*{movieId}" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-8">
+                                <label for="movieYear" class="col-form-label">Movie Year</label> <input type="number" th:field="*{movieYear}" class="form-control" id="movieYear" placeholder="Movie Year"> <span th:if="${#fields.hasErrors('movieYear')}" th:errors="*{email}" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-8">
+                                <label for="movieTime" class="col-form-label">Movie Time</label> <input type="number" th:field="*{movieTime}" class="form-control" id="movieTime" placeholder="Movie Time"> <span th:if="${#fields.hasErrors('movieTime')}" th:errors="*{movieTime}" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group col-md-8">
+                                <label for="movieTitle" class="col-form-label">Movie Title</label> <input type="text" th:field="*{movieTitle}" class="form-control" id="movieTitle" placeholder="Movie Title"> <span th:if="${#fields.hasErrors('movieTitle')}" th:errors="*{movieTitle}" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group col-md-8">
+                                <label for="movieLanguage" class="col-form-label">Movie Language</label> <input type="text" th:field="*{movieLanguage}" class="form-control" id="movieLanguage" placeholder="Movie Language"> <span th:if="${#fields.hasErrors('movieLanguage')}" th:errors="*{movieLanguage}" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group col-md-8">
+                                <label for="movieReleasingCountry" class="col-form-label">Movie Releasing Country</label> <input type="text" th:field="*{movieReleasingCountry}" class="form-control" id="movieReleasingCountry" placeholder="Movie Releasing Country"> <span th:if="${#fields.hasErrors('movieReleasingCountry')}" th:errors="*{movieReleasingCountry}" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group col-md-8">
+                                <label for="movieReleasingDate" class="col-form-label">Movie Releasing Date</label> <input type="text" th:field="*{movieReleasingDate}" class="form-control" id="movieReleasingDate" placeholder="Movie Releasing Date"> <span th:if="${#fields.hasErrors('movieReleasingDate')}" th:errors="*{movieReleasingDate}" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group col-md-8">
+                                <input type="submit" class="btn btn-primary" value="Update Movie">
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html> 
